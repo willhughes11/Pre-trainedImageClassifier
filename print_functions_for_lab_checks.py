@@ -234,7 +234,7 @@ def check_calculating_results(results_dic, results_stats_dic):
 
     """
     if results_stats_dic is None:
-        print("* Doesn't Check the Results Dictionary because 'calculates_results_stats' hasn't been defined.")
+        print("calculate_result_stats is undefined")
     else:
         # Code for checking results_stats_dic -
         # Checks calculations of counts & percentages BY using results_dic
@@ -291,20 +291,18 @@ def check_calculating_results(results_dic, results_stats_dic):
                         n_class_cnotd += 1
 
                     
-        # calculates statistics based upon counters from above
         n_pet_notd = n_images - n_pet_dog
         pct_corr_dog = ( n_class_cdog / n_pet_dog )*100
         pct_corr_notdog = ( n_class_cnotd / n_pet_notd )*100
         pct_corr_breed = ( n_match_breed / n_pet_dog )*100
-    
-        # prints calculated statistics
-        print("\n ** Statistics from calculates_results_stats() function:")
+
+        print("\n ** Statistics from calculates_results_stats:")
         print("N Images: {:2d}  N Dog Images: {:2d}  N NotDog Images: {:2d} \nPct Corr dog: {:5.1f} Pct Corr NOTdog: {:5.1f}  Pct Corr Breed: {:5.1f}".format(
               results_stats_dic['n_images'], results_stats_dic['n_dogs_img'],
               results_stats_dic['n_notdogs_img'], results_stats_dic['pct_correct_dogs'],
               results_stats_dic['pct_correct_notdogs'],
               results_stats_dic['pct_correct_breed']))
-        print("\n ** Check Statistics - calculated from this function as a check:")
+        print("\n ** Check Stats:")
         print("N Images: {:2d}  N Dog Images: {:2d}  N NotDog Images: {:2d} \nPct Corr dog: {:5.1f} Pct Corr NOTdog: {:5.1f}  Pct Corr Breed: {:5.1f}".format(
               n_images, n_pet_dog, n_pet_notd, pct_corr_dog, pct_corr_notdog,
               pct_corr_breed))
